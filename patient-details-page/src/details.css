@@ -1,0 +1,204 @@
+
+h1{
+  font-family:Georgia, serif;
+  --color: #010101;
+  color: var(--color);
+  text-align: center;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #f09,
+      0 0 82px #f09,
+      0 0 92px #f09,
+      0 0 102px #f09,
+      0 0 151px #f09;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+.scroll {
+  width:20cm;
+  flex-direction: column;
+}
+
+.form-container {
+  width: 500px;
+  height: 300px;
+  background: #827f7f;
+  opacity:0.8;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-sizing: border-box;
+  position: relative;
+  overflow-x: hidden;
+  margin-top: 1cm;
+  margin-bottom: 1cm;
+  margin-left: 15%;
+}
+.lock-icon {
+  font-size: 20px;
+  color: #0e2954;
+}
+.form {
+  width: 12cm;
+  height: 60%;
+  padding:20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #000000;
+  margin-right: 10cm;
+
+}
+.toggle-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.form-title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  font-size: 40px;
+  font-weight: 700;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  opacity: 1;
+}
+.form-sub-title {
+  margin-top:0;
+  font-size: 18px;
+  font-weight: 500;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  opacity: 1;
+}
+.login-card,
+.password-card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-top: 25px;
+  gap: 20px;
+  align-items: flex-end;
+  position: absolute;
+  width: calc(100% - 30px);
+  transition: all 0.3s ease-in-out;
+  bottom: 20px;
+}
+.login-card {
+  left: 15px;
+}
+.password-card {
+  left: 100%;
+}
+.field-container {
+  border: 1px solid #a7a7a7;
+  border-radius: 8px;
+  width: 100%;
+  height: 45px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.input {
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background: transparent;
+  position: relative;
+  z-index: 11;
+  font-size:larger;
+  color: rgb(0, 0, 0);
+}
+.placeholder {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #a7a7a7;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  opacity: 1;
+}
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  top: 5px;
+  transform: none;
+  font-size: 12px;
+}
+.input:focus,
+.input:not(:placeholder-shown) {
+  height: 68%;
+  font-weight: bolder;
+}
+.btn {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  
+}
+
+.btn:active {
+  scale: 0.92;
+}
+
+.btn:hover {
+  background: rgb(2,29,78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 95, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+}
+
+.btn-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+.card {
+  width: auto; /* Let the width be determined by the content */
+  height: auto; /* Let the height be determined by the content */
+  padding: 20px; /* Add padding for spacing */
+  background: rgb(150, 150, 159);
+  border-radius: 20px; /* Adjust border radius as needed */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -5px 5px 0px inset,
+              rgba(0, 0, 0, 0.15) 0px -8px 6px 0px inset,
+              rgba(0, 0, 0, 0.1) 0px -16px 8px 0px inset,
+              rgba(0, 0, 0, 0.06) 0px 1px 1px,
+              rgba(0, 0, 0, 0.09) 0px 2px 2px,
+              rgba(0, 0, 0, 0.09) 0px 4px 4px,
+              rgba(0, 0, 0, 0.09) 0px 8px 8px,
+              rgba(0, 0, 0, 0.09) 0px 16px 16px;
+}
+.img1{
+  width: 3cm;
+  height: 3.5cm;
+  margin-left:10px;
+  margin-bottom: -40px;
+}
+.pngline{
+display: flex;
+align-items: center;
+}
