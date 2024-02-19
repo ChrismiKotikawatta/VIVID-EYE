@@ -1,0 +1,46 @@
+/* App.css */
+* {
+
+    font-family: "Poppins", sans-serif;
+    /* background-image: url("../src/images/test.jpg"); */
+  
+}
+
+
+
+body {
+    background-color: #898EFF;
+   
+    padding: 200px;
+}
+
+
+
+.App {
+
+    background-color: #D4DCFF;
+    height: auto;
+    width: auto;
+    display: grid;
+    place-items: center;
+    border-radius: 40px;
+
+
+
+    /* align-items: center; */
+    /* justify-content: center; */
+
+}
+
+.App h1 {
+    text-align: center;
+    color: #898EFF;
+    font-weight: bold;
+}
+
+.Question {
+    text-align: left;
+    color: #292b2e;
+    padding-top: 5px;
+
+}
