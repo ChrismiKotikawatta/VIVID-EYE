@@ -58,10 +58,10 @@ function Detail() {
             <tr key={i}>
               <td>{d.NIC}</td>
               <td>{d.Name}</td>
-              <td>{d.DateOfBirth}</td>
+              <td>{d.Date_of_Birth}</td>
               <td>{d.Address}</td>
-              <td>{d.ContactNo}</td>
-              <td>{d.conditionDescription}</td>
+              <td>{d.Contact_No}</td>
+              <td>{d.Condition_Description}</td>
             </tr>
 
           ))}
