@@ -20,9 +20,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  
+  overflow-x: hidden; 
+  overflow-y: auto; 
 }
+
 
 .scroll {
   width:20cm;
@@ -178,12 +179,12 @@ body {
   cursor: pointer;
 }
 .card {
-  width: auto; /* Let the width be determined by the content */
-  height: auto; /* Let the height be determined by the content */
-  padding: 20px; /* Add padding for spacing */
+  width: auto; 
+  height: auto; 
+  padding: 20px; 
   background: rgb(150, 150, 159);
   opacity: 0.9;
-  border-radius: 20px; /* Adjust border radius as needed */
+  border-radius: 20px; 
   box-shadow: rgba(0, 0, 0, 0.17) 0px -5px 5px 0px inset,
               rgba(0, 0, 0, 0.15) 0px -8px 6px 0px inset,
               rgba(0, 0, 0, 0.1) 0px -16px 8px 0px inset,
@@ -222,16 +223,23 @@ align-items: center;
   font-weight: bold;
 }
 
-.table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
 
 .table tr:hover {
   background-color: #dddddd63;
 }
 
-/* Adjusting width and line break for the last column */
+
 .table td:last-child {
-  width: 20%; /* Adjust the width as per your requirement */
+  width: 20%; 
   word-break: break-all;
+}
+.table td:nth-child(4) {
+  width: 20%; 
+  word-break: break-all;
+}
+.messege{
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+  font-size: larger;
+  font-weight: 20px;
+  text-align: center;
 }
