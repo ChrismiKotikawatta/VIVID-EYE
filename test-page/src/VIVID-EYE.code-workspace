@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "VIVID-EYE",
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "VIVID-EYE"
+	}
+}

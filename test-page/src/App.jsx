@@ -2,12 +2,12 @@
 
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Question from "./question";
+import Question from "./question.js";
 import qBank from "./QuestionBank.js";
 import Score from "./Score.js";
 import './TestStyle.css';
 // import test from 'vivid-eye/src/images/test.jpg';
-import test from "./images/test.jpg";
+
 
 class App extends Component {
 
@@ -62,6 +62,7 @@ class App extends Component {
 				{!quizEnd ? (
 					<Question
 						question={questionBank[currentQuestion]}
+						image={questionBank[currentQuestion].image} // Pass the image as a prop
 						selectedOption={selectedOption}
 						onOptionChange={this.handleOptionChange}
 						onSubmit={this.handleFormSubmit}

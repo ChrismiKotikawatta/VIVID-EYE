@@ -3,44 +3,97 @@
 
     font-family: "Poppins", sans-serif;
     /* background-image: url("../src/images/test.jpg"); */
-  
+
 }
 
 
 
 body {
-    background-color: #898EFF;
-   
-    padding: 200px;
+    margin: 0;
+    /* Remove default body margin */
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 100vh;
+    /* Make body full height of the viewport */
+    background-image: url(./image/background.jpeg ) ;
+    
+
 }
 
-
-
 .App {
-
-    background-color: #D4DCFF;
-    height: auto;
-    width: auto;
+    background-color: #ecedf1e8;
+    height: 100vh;
+    width:150vh;
     display: grid;
     place-items: center;
     border-radius: 40px;
-
-
-
-    /* align-items: center; */
-    /* justify-content: center; */
 
 }
 
 .App h1 {
     text-align: center;
-    color: #898EFF;
+    color: #000000;
     font-weight: bold;
+    /* padding: 10px; */
 }
 
 .Question {
     text-align: left;
     color: #292b2e;
-    padding-top: 5px;
+    padding: 5px;
+}
 
+.question_no {
+    margin-top: 0px;
+}
+.submit-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn {
+    background-color: #898EFF;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #6b7bd7;
+}
+
+.color-pallet{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+}
+.form-check-label {
+    padding: 30px;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Align vertically */
+    justify-content: flex-start; /* Align horizontally */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-check {
+    padding: 5px;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+    color: black;
+}
+
+.options{
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center the options horizontally */
+    margin: 0 10px;
 }

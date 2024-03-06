@@ -2,6 +2,8 @@
 
 import React, {Component} from "react";
 import Options from "./Option";
+import './TestStyle.css';
+
 
 class Question extends Component{
 	render() {
@@ -9,19 +11,19 @@ class Question extends Component{
 
 		return(
 			<div className="Question">
-				
-				<h3>Question {question.id}</h3>
+				<h3 className="question_no">Question {question.id}</h3>
 				<h5 className="mt-2">{question.question}</h5>
-				<img src={question.image} alt="test_pallet"></img>
+				<img className = "color-pallet" src={question.image} alt="Test Image" />
+
                 
-				<form onSubmit={onSubmit} className="mt-2 mb-2">
+				<form onSubmit={onSubmit} className="options">
 					<Options
 						options={question.options}
 						selectedOption={selectedOption}
 						onOptionChange={onOptionChange}
 					/>
 					
-					<button type="submit" className="btn btn-primary mt-2">
+					<button type="submit" className="submit-btn">
 						SUBMIT
 					</button>
 				</form>

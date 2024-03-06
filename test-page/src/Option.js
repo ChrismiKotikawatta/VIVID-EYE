@@ -21,7 +21,9 @@ class Options extends Component {
 						<label className="form-check-label">{option}</label>
 					</div>
 				))}
+				
 			</div>
+			
 		);
 	}
 }
