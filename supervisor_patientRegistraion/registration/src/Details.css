@@ -1,0 +1,22 @@
+.inputBox {
+    align-items: center; /* Align items vertically centered */
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.inputBox label,
+.inputBox input {
+    display: inline-block;
+    vertical-align: top; /* Align elements to the top */
+}
+
+.inputBox label {
+    width: 150px; /* Adjust the width of labels as needed */
+    text-align: left;
+}
+.inputBox input {
+    width: 200px;
+    padding: 8px;
+    border-radius: 1.5ex;
+}
+
