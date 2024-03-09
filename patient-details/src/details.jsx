@@ -1,5 +1,6 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './details.css';
+
 
 const detailImg = new URL("/image/medical-records.png", import.meta.url);
 
@@ -31,18 +32,19 @@ function Detail() {
 
   return (
     <div className="scroll">
-      <h1>VIVID EYE</h1>
+      <h1 className='vivid'>VIVID EYE</h1>
 
       <div className="form-container">
         <form className="form">
-          <div className='pngline'>
-            <p className="form-title">Patient Details</p>
+          <div className='heading'>
+            <h1 className="form-title">Patient Details</h1>
             <img className='img1' src={detailImg} alt="patient details" />
           </div>
 
-          <p className="form-sub-title">
+          <h2 className="form-sub-title">
             Search to see patient records here
-          </p>
+          </h2>
+
           <div className="login-card">
             <div className="field-container">
               <input
@@ -63,14 +65,15 @@ function Detail() {
             </button>
           </div>
         </form>
-        <br /><br />
+
+        {/* <br /><br /> */}
       </div>
       <br />
       {isCardVisible && (
         <div className="card">
           {noMatch ? (
             <div className='messege'><p>No Matching Found</p></div>
-            
+
           ) : (
             <div className='table'>
               <table>

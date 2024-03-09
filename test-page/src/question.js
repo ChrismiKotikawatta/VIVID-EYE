@@ -22,7 +22,7 @@ class Question extends Component{
 						selectedOption={selectedOption}
 						onOptionChange={onOptionChange}
 					/>
-					
+					<br></br>
 					<button type="submit" className="submit-btn">
 						SUBMIT
 					</button>
