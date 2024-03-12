@@ -8,16 +8,18 @@ a {
 a:hover {
   color: #535bf2;
 }
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-image:url(../image/bg4.png);
-  /* background-position:center; */
+  background-image: url(../image/eye1.jpeg);
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
 }
+
 
 h1 {
   font-size: 3.2em;

@@ -32,12 +32,13 @@ function Detail() {
 
   return (
     <div className="scroll">
+
       <h1 className='vivid'>VIVID EYE</h1>
 
       <div className="form-container">
         <form className="form">
           <div className='heading'>
-            <h1 className="form-title">Patient Details</h1>
+            <h1 className="form-title">PATIENT DETAILS</h1>
             <img className='img1' src={detailImg} alt="patient details" />
           </div>
 
