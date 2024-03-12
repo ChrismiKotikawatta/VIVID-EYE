@@ -18,14 +18,17 @@ body {
     /* Center vertically */
     height: 100vh;
     /* Make body full height of the viewport */
-    background-image: url(../images/Untitled\ design\ \(6\).png) ;
-    
+    background-image: url(../images/eye1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 
 }
 
 .App {
-    background-color: #ecedf1e8;
-   
+    background-color: #c3c5cdbb;
+
     display: grid;
     place-items: center;
     border-radius: 40px;
@@ -36,7 +39,7 @@ body {
 
 .App h1 {
     text-align: center;
-    color: rgb(26, 200, 194);
+    color: rgb(76, 78, 78);
     font-weight: bold;
     /* padding: 10px; */
 }
@@ -45,19 +48,20 @@ body {
     text-align: left;
     color: #292b2ec5;
     padding: 5px;
-    
+
 }
 
 .question_no {
     margin-top: 0px;
 }
+
 .submit-btn-container {
     display: flex;
     justify-content: center;
 }
 
 .submit-btn {
-    background-color: rgb(26, 200, 194);
+    background-color: rgb(85, 89, 89);
     border: none;
     border-radius: 20px;
     color: white;
@@ -68,38 +72,47 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 35px;
-    
+
 }
 
 .submit-btn:hover {
     background-color: rgb(109, 117, 116);
 }
 
-.color-pallet{
+.color-pallet {
     display: flex;
     justify-content: center;
     padding: 20px;
 
 }
+
 .form-check-label {
     padding: 30px;
-    display: flex; /* Use flexbox */
-    align-items: center; /* Align vertically */
-    justify-content: flex-start; /* Align horizontally */
+    display: flex;
+    /* Use flexbox */
+    align-items: center;
+    /* Align vertically */
+    justify-content: flex-start;
+    /* Align horizontally */
     font-size: 20px;
     font-weight: bold;
 }
 
 .form-check {
     padding: 5px;
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Align items horizontally */
-    align-items: center; /* Align items vertically */
+    display: flex;
+    /* Use flexbox */
+    justify-content: center;
+    /* Align items horizontally */
+    align-items: center;
+    /* Align items vertically */
     color: black;
 }
 
-.options{
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center the options horizontally */
+.options {
+    display: flex;
+    /* Use flexbox */
+    justify-content: center;
+    /* Center the options horizontally */
     margin: 0 10px;
 }
