@@ -1,37 +1,35 @@
 import { useState, useEffect } from 'react';
+import './App.css';
 
 function Questionnaire() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [isCorrect, setIsCorrect] = useState(null);
-  const [currentQuestion, setCurrentQuestion] = useState(null);
+  const [usedImages, setUsedImages] = useState([]);
 
-  // Main questions and their associated images and sub-questions
-  const questions = [
-    { 
-      src: "../assets/bg1.jpg", 
-      numbers: [1, 2, 3],
-      subQuestions: [
-        {src: 'subImage1.jpg', number: 1 },
-        { src: 'subImage2.jpg', number: 2 },
-        { src: 'subImage3.jpg', number: 3 }
-      ]
-    },
-    { src: 'image2.jpg', numbers: [9, 4] },
-    { src: 'image3.jpg', numbers: [5, 6, 7] }
+  const images = [
+    { src: 'image1.jpg', numbers: [1, 2] },
+    { src: 'image2.jpg', numbers: [3, 4] },
+    { src: 'image3.jpg', numbers: [5, 6, 7] },
+    // Add more images as needed
   ];
 
   useEffect(() => {
-    setCurrentQuestion(getRandomQuestion());
-  }, [currentQuestionIndex]); // Update currentQuestion whenever currentQuestionIndex changes
+    if (usedImages.length === images.length) {
+      // Reset used images when all images have been used
+      setUsedImages([]);
+    }
+  }, [currentQuestionIndex, usedImages, images.length]);
 
-  const getRandomQuestion = () => {
-    const randomIndex = Math.floor(Math.random() * questions.length);
-    return questions[randomIndex];
+  const getRandomImage = () => {
+    const remainingImages = images.filter(image => !usedImages.includes(image));
+    return remainingImages[Math.floor(Math.random() * remainingImages.length)];
   };
 
+  const currentImage = getRandomImage();
+
   const handleAnswerSubmission = () => {
-    const correctNumbers = currentQuestion.numbers;
+    const correctNumbers = currentImage.numbers;
     const userEnteredNumber = parseInt(userAnswer);
 
     if (correctNumbers.includes(userEnteredNumber)) {
@@ -42,51 +40,36 @@ function Questionnaire() {
   };
 
   const nextQuestion = () => {
-    if (isCorrect === null) return; // Prevent advancing without answering
-    
-    if (currentQuestionIndex === 0) {
-      if (parseInt(userAnswer) === 1 || parseInt(userAnswer) === 2) {
-        // If the user answers 1 or 2, show sub-questions
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
-      } else {
-        // If the user answers 3, move on to the next main question
-        setCurrentQuestionIndex(currentQuestionIndex + 2);
-      }
-    } else if (currentQuestionIndex === 1) {
-      // For the second question, move to the next main question regardless of the answer
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    } else {
-      // Move to the next main question for subsequent questions
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    }
-
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
     setUserAnswer('');
     setIsCorrect(null);
+    setUsedImages([...usedImages, currentImage]);
   };
 
-  if (!currentQuestion) {
-    return <div>Loading...</div>; // Handle loading state if currentQuestion is null
-  }
-
   return (
-    <div>
+    <div className='test'>
       <h1>Ishihara Test</h1>
-      <div>
-        <img src={currentQuestion.src} alt="Number" />
-        <input
-          type="text"
-          value={userAnswer}
-          onChange={(e) => setUserAnswer(e.target.value)}
-        />
-        <button onClick={handleAnswerSubmission}>Submit Answer</button>
-        {isCorrect === true && <p>Correct Answer!</p>}
-        {isCorrect === false && <p>Incorrect Answer!</p>}
-        {isCorrect !== null && (
-          <button onClick={nextQuestion}>Next Question</button>
-        )}
-      </div>
+      {currentQuestionIndex < images.length ? (
+        <div>
+          <img src={currentImage.src} alt="Number" />
+          <input
+            type="text"
+            value={userAnswer}
+            onChange={(e) => setUserAnswer(e.target.value)}
+          />
+          <button onClick={handleAnswerSubmission}>Submit Answer</button>
+          {isCorrect === true && <p>Correct Answer!</p>}
+          {isCorrect === false && <p>Incorrect Answer!</p>}
+          {isCorrect !== null && (
+            <button onClick={nextQuestion}>Next Question</button>
+          )}
+        </div>
+      ) : (
+        <p>Congratulations! You have completed the questionnaire.</p>
+      )}
     </div>
   );
 }
 
 export default Questionnaire;
+  
