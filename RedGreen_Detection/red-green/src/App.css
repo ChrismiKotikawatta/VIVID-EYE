@@ -1,0 +1,16 @@
+.test {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set the height to fill the viewport */
+}
+.imageDisplay{
+  margin-bottom: 7.5cm;
+}
+h1{
+  text-align: center;
+}
+.test > div {
+  text-align: center;
+}
