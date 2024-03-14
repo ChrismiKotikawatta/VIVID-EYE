@@ -66,15 +66,17 @@ function Questionnaire() {
   const currentImage = currentQuestionIndex < images.length ? images[currentQuestionIndex] : null;
 
   return (
-    <>
+    <div className='questionnaire'>
     <h1>Ishihara Test</h1>
     <div className='test'>
       {currentImage ? (
-        <div className='imageDisplay'>
+      <div className='imageDisplay'>
+        <div className='image'>
           <img src={currentImage.src} alt="Number" />
-          <br />
-          <label name="answer"> Enter the number displayed in the image : </label>
-          <br />
+        </div>
+        <div className='inputContainer'>
+          <label name="answer"> Enter the number displayed in the image</label>
+          <br/>
           <input
             type="text"
             name="answer"
@@ -82,19 +84,27 @@ function Questionnaire() {
             onChange={(e) => setUserAnswer(e.target.value)}
             required
           />
-          <br />
-          <button onClick={handleAnswerSubmission}>Submit Answer</button>
-          {isCorrect === true && <p>Correct Answer!</p>}
-          {isCorrect === false && <p>Incorrect Answer!</p>}
-          {isCorrect !== null && (
-            <button onClick={nextQuestion}>Next Question</button>
-          )}
         </div>
+        <div className='buttonContainer'>
+          <div className='button'>
+            <div className='button1'>
+              <button onClick={handleAnswerSubmission}>Submit Answer</button>
+            </div>
+            {isCorrect === true && <p>Correct Answer!</p>}
+            {isCorrect === false && <p>Incorrect Answer!</p>}
+            <div className='button2'>
+              {isCorrect !== null && (
+                <button onClick={nextQuestion}>Next Question</button>
+              )}
+            </div>
+          </div>
+        </div>
+    </div>      
       ) : (
         <p>Congratulations! You have completed the questionnaire.</p>
       )}
     </div>
-    </>
+    </div>
   );
 }
 
