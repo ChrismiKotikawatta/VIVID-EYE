@@ -7,29 +7,39 @@ function Questionnaire() {
   const [isCorrect, setIsCorrect] = useState(null);
   const [usedImages, setUsedImages] = useState([]);
 
-  const images = [
-    { src: 'image1.jpg', numbers: [1, 2] },
-    { src: 'image2.jpg', numbers: [3, 4] },
-    { src: 'image3.jpg', numbers: [5, 6, 7] },
+  const initialImages = [
+    { src: "/src/assets/img1.jpg", numbers: [8, 5, 6, 3] },
+    { src: "/src/assets/img2.jpg", numbers: [2, 7] },
+    { src: "/src/assets/img3.jpg", numbers: [5, 6] },
     // Add more images as needed
   ];
+
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    // Shuffle the initial images array when the component mounts
+    const shuffledImages = shuffleArray(initialImages);
+    setImages(shuffledImages);
+  }, []);
 
   useEffect(() => {
     if (usedImages.length === images.length) {
       // Reset used images when all images have been used
       setUsedImages([]);
     }
-  }, [currentQuestionIndex, usedImages, images.length]);
+  }, [usedImages, images]);
 
-  const getRandomImage = () => {
-    const remainingImages = images.filter(image => !usedImages.includes(image));
-    return remainingImages[Math.floor(Math.random() * remainingImages.length)];
+  const shuffleArray = (array) => {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
   };
 
-  const currentImage = getRandomImage();
-
   const handleAnswerSubmission = () => {
-    const correctNumbers = currentImage.numbers;
+    const correctNumbers = images[currentQuestionIndex].numbers;
     const userEnteredNumber = parseInt(userAnswer);
 
     if (correctNumbers.includes(userEnteredNumber)) {
@@ -43,8 +53,10 @@ function Questionnaire() {
     setCurrentQuestionIndex(currentQuestionIndex + 1);
     setUserAnswer('');
     setIsCorrect(null);
-    setUsedImages([...usedImages, currentImage]);
+    setUsedImages([...usedImages, images[currentQuestionIndex]]);
   };
+
+  const currentImage = images[currentQuestionIndex];
 
   return (
     <div className='test'>
@@ -72,4 +84,3 @@ function Questionnaire() {
 }
 
 export default Questionnaire;
-  
