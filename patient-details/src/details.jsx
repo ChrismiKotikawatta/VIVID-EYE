@@ -33,7 +33,7 @@ function Detail() {
   return (
     <div className="scroll">
 
-      <h1 className='vivid'>VIVID EYE</h1>
+      {/* <h1 className='vivid'>VIVID EYE</h1> */}
 
       <div className="form-container">
         <form className="form">
