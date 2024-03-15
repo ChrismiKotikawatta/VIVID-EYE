@@ -9,24 +9,25 @@ function Questionnaire() {
   const [score, setScore] = useState(0);
 
   const images = [
-    { src: './images/9.jpg', numbers: [9, 6] },
-    { src: './images/10.jpg', numbers: [0, 2] },
-    { src: './images/15.jpg', numbers: [5, 6] },
-    { src: './images/21.jpg', numbers: [6, 2] },
-    { src: './images/27.jpg', numbers: [4, 4] },
-    { src: './images/36.jpg', numbers: [7, 4] },
-    { src: './images/41.jpg', numbers: [2, 6] },
-    { src: './images/46.jpg', numbers: [1, 2] },
-    { src: './images/61.jpg', numbers: [8, 4] },
-    { src: './images/87.jpg', numbers: [3, 2] },
+    { src: './images/9.jpg', numbers: [9, 7] },
+    { src: './images/10.jpg', numbers: [0, 0] },
+    { src: './images/15.jpg', numbers: [5, 3] },
+    { src: './images/21.jpg', numbers: [6, 5] },
+    { src: './images/27.jpg', numbers: [4, 9] },
+    { src: './images/36.jpg', numbers: [7, 5] },
+    { src: './images/41.jpg', numbers: [2, 7] },
+    { src: './images/46.jpg', numbers: [1, 1] },
+    { src: './images/61.jpg', numbers: [8, 3] },
+    { src: './images/87.jpg', numbers: [3, 5] },
   ];
 
   useEffect(() => {
     if (usedImages.length === images.length) {
-      // Resetting used images when all images have been used
+      // Reset the used images
       setUsedImages([]);
     }
   }, [currentQuestionIndex, usedImages, images.length]);
+
 
   const getRandomImage = () => {
     const remainingImages = images.filter(image => !usedImages.includes(image));
@@ -36,20 +37,21 @@ function Questionnaire() {
   const handleAnswerSubmission = () => {
     const correctNumbers = currentImage.numbers;
     const userEnteredNumber = parseInt(userAnswer);
-
+  
     if (correctNumbers.includes(userEnteredNumber)) {
       setIsCorrect(true);
-      setScore(score + 10);
+      
     } else {
       setIsCorrect(false);
     }
   };
+  
 
   const nextQuestion = () => {
     setCurrentQuestionIndex(currentQuestionIndex + 1);
     setUserAnswer('');
     setIsCorrect(null);
-    const currentImage = getRandomImage(); // Accesing the new image here
+    const currentImage = getRandomImage(); // Getting the new image
     setUsedImages([...usedImages, currentImage]);
   };
 
@@ -91,7 +93,11 @@ function Questionnaire() {
         </div>
     </div>      
       ) : (
-        <p>Congratulations! You have completed the questionnaire.</p>
+        <div>
+          <p>Congratulations! You have completed the questionnaire.</p>
+          <p>Score: {score}</p>
+          <button>View Result</button>
+        </div>
       )}
     </div>
     </div>
