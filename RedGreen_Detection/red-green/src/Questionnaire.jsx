@@ -41,10 +41,10 @@ function Questionnaire() {
     if (correctNumbers.includes(userEnteredNumber)) {
       setIsCorrect(true);
       if (userEnteredNumber === correctNumbers[1]) {
-        setScore(score + 5); // Add 5 to score if the user's answer matches the second number
+        setScore(score + 5); // Adding 5 when the user enters an answer with the defficiency
       }
       if (userEnteredNumber === correctNumbers[0]) {
-        setScore(score + 10); // Add 10 to score if the user's answer matches the first number
+        setScore(score + 10); // Adding 10 when the user enters an answer with the defficiency
       }
     } else {
       setIsCorrect(false);
