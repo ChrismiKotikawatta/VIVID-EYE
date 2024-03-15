@@ -9,26 +9,16 @@ function Questionnaire() {
   const [score, setScore] = useState(0);
 
   const images = [
-    { src: './images/1.jpg', numbers: [2, 1] },
-    { src: './images/3.jpg', numbers: [0, 4] },
-    { src: './images/4.jpg', numbers: [4, 6] },
-    { src: './images/7.jpg', numbers: [9, 2] },
-    { src: './images/8.jpg', numbers: [5, 4] },
     { src: './images/9.jpg', numbers: [9, 6] },
     { src: './images/10.jpg', numbers: [0, 2] },
-    { src: './images/11.jpg', numbers: [6, 4] },
     { src: './images/15.jpg', numbers: [5, 6] },
     { src: './images/21.jpg', numbers: [6, 2] },
     { src: './images/27.jpg', numbers: [4, 4] },
-    { src: './images/31.jpg', numbers: [1, 6] },
-    { src: './images/35.jpg', numbers: [2, 2] },
     { src: './images/36.jpg', numbers: [7, 4] },
     { src: './images/41.jpg', numbers: [2, 6] },
     { src: './images/46.jpg', numbers: [1, 2] },
     { src: './images/61.jpg', numbers: [8, 4] },
-    { src: './images/84.jpg', numbers: [8, 6] },
     { src: './images/87.jpg', numbers: [3, 2] },
-    { src: './images/90.jpg', numbers: [3, 4] },
   ];
 
   useEffect(() => {
