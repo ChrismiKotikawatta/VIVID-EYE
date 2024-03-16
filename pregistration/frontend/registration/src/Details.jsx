@@ -55,7 +55,8 @@ function Details() {
       </div>
       <div className="registerInfo">
         <header>
-          <h1>Add a new patient</h1>
+          <h1>PATIENT REGISTRATION</h1>
+          <h2>Add a new patient</h2>
         </header>
         <form onSubmit={handleSubmit}>
           <div className="inputBox">
@@ -164,7 +165,7 @@ function Details() {
           <div className="registering">
             <input type="checkbox" name="checkbox" required />
             <label htmlFor="checkbox">
-              By Registering you are agreeing to our terms of use and privacy
+              By registering you are agreeing to our terms of use and privacy
               policy
             </label>
           </div>

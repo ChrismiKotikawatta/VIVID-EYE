@@ -5,7 +5,7 @@
   background-color: white;
   color: rgb(52, 54, 54) ;
   /* border-radius: 10px; */
-  padding: 10px;
+  padding: 5px;
   width: 30cm;
   margin: 0 auto; /* Center the form horizontally */
   text-align: left; /* Center the content inside the form */
@@ -16,6 +16,7 @@
   box-sizing: border-box;
   /* width: auto; */
   text-align: center;
+  
   /* height: 75%; */
 }
 
@@ -32,7 +33,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #acdbe35b
-  
-  ;
+  background-color: #acdbe35b;
+  border-radius: 20px;
 }
