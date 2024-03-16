@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import './App.css';
 
 
@@ -70,6 +71,51 @@ function Questionnaire_green(){
     // holds image data until there are questions.
     const currentImage = question < greenImages.length ? greenImages[question] : null;
 
-    
+    // JSX code block that represents UI structure and behavior of the questionnaire
+    return (
+        <div className='questionnaire'>
+        <h1>Ishihara Test</h1>
+        <div className='test'>
+          {currentImage ? (
+            <div className='imageDisplay'>
+              <div className='image'>
+                <img src={currentImage.src} alt="Number" />
+              </div>
+              <div className='inputContainer'>
+                <label name="answer"> Enter the number displayed in the image</label>
+                <br/>
+                <input
+                  type="text"
+                  name="answer"
+                  value={userAnswer}
+                  onChange={(e) => setUserAnswer(e.target.value)}
+                  required
+                />
+              </div>
+              <div className='buttonContainer'>
+                <div className='button'>
+                  <div className='button1'>
+                    <button onClick={handleSubmission}>Submit Answer</button>
+                  </div>
+                  {isCorrect === true && <p>Correct Answer!</p>}
+                  {isCorrect === false && <p>Incorrect Answer!</p>}
+                  <div className='button2'>
+                    {isCorrect !== null && (
+                      <button onClick={nextQuestion}>Next Question</button>
+                    )}
+                  </div>
+                </div>
+              </div>
+          </div>      
+            ) : (
+              <div>
+                <p>Congratulations! You have completed the questionnaire.</p>
+                <p>Score: {score}</p>
+                <button>View Result</button>
+              </div>
+          )}
+        </div>
+        </div>
+    );
 }
 export default Questionnaire_green;
