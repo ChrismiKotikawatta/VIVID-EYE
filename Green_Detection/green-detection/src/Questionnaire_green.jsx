@@ -10,6 +10,7 @@ function Questionnaire_green(){
     const [isCorrect, setIsCorrect] = useState(null);
     // tracks the users score
     const [score, setScore] = useState(0);
+    const [userAnswer, setUserAnswer] = useState('');
 
     const greenImages = [
         {src: './images/0.jpg', answer: [9, 7]},
@@ -38,7 +39,7 @@ function Questionnaire_green(){
     };    
 
     // function that is used to handle users answer submission
-    const handleSubmission = () =>{
+    const handleSubmission = () => {
         const correctAnswer = currentImage.answer();
         const userAnswer = parseInt(question);
 
@@ -55,6 +56,20 @@ function Questionnaire_green(){
             }
         }
     };
+    //
 
+    // This function is used to go to the next question and resets previus answer
+    const nextQuestion = () => {
+        setQuestion(question + 1);
+        setUserAnswer('');
+        setIsCorrect(null);
+        const currentImage = getRandomImage();
+        setUsedImages([...usedImages, currentImage]);
+    };
+
+    // holds image data until there are questions.
+    const currentImage = question < greenImages.length ? greenImages[question] : null;
+
+    
 }
 export default Questionnaire_green;
