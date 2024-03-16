@@ -1,16 +1,19 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #5cc2fd;
-  background-image: url('/backgroun.jpg');
+  /* background-color: #5cc2fd; */
+  background-image: url('./assets/bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 h1 {
   text-align: center;
-  font-size: 250%;
+  font-size: 24px;
   margin-top: 20px;
 }
