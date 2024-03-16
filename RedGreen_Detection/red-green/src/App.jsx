@@ -1,10 +1,10 @@
 import React from 'react';
-import Questionnaire from './Questionnaire_red';
+import Questionnaire_red from './Questionnaire_red';
 
 function App() {
   return (
     <div className="App">
-      <Questionnaire />
+      <Questionnaire_red/>
     </div>
   );
 }

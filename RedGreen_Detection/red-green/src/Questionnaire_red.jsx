@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-function Questionnaire() {
+function Questionnaire_red() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [isCorrect, setIsCorrect] = useState(null);
@@ -109,4 +109,4 @@ function Questionnaire() {
   );
 }
 
-export default Questionnaire;
+export default Questionnaire_red;
