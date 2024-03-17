@@ -2,22 +2,32 @@
     align-items: center; /* Align items vertically centered */
     margin-top: 25px;
     margin-bottom: 20px;
+    
 }
 
 .inputBox label,
 .inputBox input {
     display: inline-block;
-    vertical-align: top; /* Align elements to the top */
+
+    /* vertical-align: top; Align elements to the top */
 }
 
 .inputBox label {
     width: 150px; /* Adjust the width of labels as needed */
     text-align: left;
-    font-size: 18px;
+    font-size: 14px;
+    color:  rgb(52, 54, 54);
 }
 .inputBox input {
-    width: 200px;
+    width: 300px;
+    height: 20px;
     padding: 8px;
-    border-radius: 1.5ex;
+    border-radius: 20px;
+    background-color: #acdbe35b;
+    border: none;
+    font-size: 14px;
+    color: rgb(143, 143, 143);
+    text-align: left;
+    margin-left: 30px;
+    
 }
-
