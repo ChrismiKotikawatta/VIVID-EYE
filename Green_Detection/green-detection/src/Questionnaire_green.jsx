@@ -6,23 +6,23 @@ function Questionnaire_green(){
     // Initalizing a state variable 'usedImages' and function 'setUsedImages' that keeps track on images that used.
     const[usedImages, setUsedImages] = useState([]);
     const[question, setQuestion] = useState(0);
-    // chwcks if user entered the correct answer
+    // checks if user entered the correct answer
     const [isCorrect, setIsCorrect] = useState(null);
     // tracks the users score
     const [score, setScore] = useState(0);
     const [userAnswer, setUserAnswer] = useState('');
 
     const greenImages = [
-        {src: './images/0.jpg', answer: [9, 7]},
-        {src: './images/0.jpg', answer: [9, 7]},
-        {src: './images/0.jpg', answer: [9, 7]},
-        {src: './images/0.jpg', answer: [9, 7]},
-        {src: './images/0.jpg', answer: [9, 7]},
-        {src: './images/0.jpg', answer: [9, 7]},
-        {src: './images/0.jpg', answer: [9, 7]},
-        {src: './images/0.jpg', answer: [9, 7]},
-        {src: './images/0.jpg', answer: [9, 7]},
-        {src: './images/0.jpg', answer: [9, 7]},
+        {src: './images/2.jpg', answer: [9, 7]},
+        {src: './images/16.jpg', answer: [9, 7]},
+        {src: './images/21.jpg', answer: [9, 7]},
+        {src: './images/32.jpg', answer: [9, 7]},
+        {src: './images/77.jpg', answer: [9, 7]},
+        {src: './images/83.jpg', answer: [9, 7]},
+        {src: './images/103.jpg', answer: [9, 7]},
+        {src: './images/129.jpg', answer: [9, 7]},
+        {src: './images/148.jpg', answer: [9, 7]},
+        {src: './images/179.jpg', answer: [9, 7]},
     ]
 
     // rests the usedImages array when the length of usedImages array is equal to greenImages's length
@@ -40,22 +40,20 @@ function Questionnaire_green(){
 
     // function that is used to handle users answer submission
     const handleSubmission = () => {
-        const correctAnswer = currentImage.answer();
-        const userAnswer = parseInt(question);
+      const currentImage = greenImages[question];
+      const correctAnswer = currentImage.answer;
 
-        if(correctAnswer.includes(userAnswer)){
-            setIsCorrect(true);
-            if(userAnswer === correctAnswer[1]){
-                setScore(score + 5);
-            }
-            else if(userAnswer === correctAnswer[0]){
-                setScore(score + 10);
-            }
-            else{
-                setIsCorrect(false);
-            }
-        }
-    };
+      if (parseInt(userAnswer) === correctAnswer[0] || parseInt(userAnswer) === correctAnswer[1]) {
+          setIsCorrect(true);
+          if (parseInt(userAnswer) === correctAnswer[1]) {
+              setScore(score + 5);
+          } else if (parseInt(userAnswer) === correctAnswer[0]) {
+              setScore(score + 10);
+          }
+      } else {
+          setIsCorrect(false);
+      }
+  };
     //
 
     // This function is used to go to the next question and resets previus answer
