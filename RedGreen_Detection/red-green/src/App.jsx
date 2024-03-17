@@ -116,4 +116,8 @@ function Questionnaire() {
   );
 }
 
+<<<<<<< HEAD
 export default Questionnaire;
+=======
+export default App;
+>>>>>>> fd1fa9c5ff8bee2bc142da7661df31f13f327d1e
