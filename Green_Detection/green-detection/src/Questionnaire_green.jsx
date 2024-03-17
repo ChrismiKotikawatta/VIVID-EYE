@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import './Questionnaire_green.css';
-import './App.css';
 
 
 function Questionnaire_green(){
