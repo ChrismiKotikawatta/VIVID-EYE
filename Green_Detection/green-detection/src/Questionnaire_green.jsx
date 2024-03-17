@@ -13,16 +13,16 @@ function Questionnaire_green(){
     const [userAnswer, setUserAnswer] = useState('');
 
     const greenImages = [
-        {src: './images/2.jpg', answer: [9, 7]},
-        {src: './images/16.jpg', answer: [9, 7]},
-        {src: './images/21.jpg', answer: [9, 7]},
-        {src: './images/32.jpg', answer: [9, 7]},
-        {src: './images/77.jpg', answer: [9, 7]},
-        {src: './images/83.jpg', answer: [9, 7]},
-        {src: './images/103.jpg', answer: [9, 7]},
-        {src: './images/129.jpg', answer: [9, 7]},
-        {src: './images/148.jpg', answer: [9, 7]},
-        {src: './images/179.jpg', answer: [9, 7]},
+        {src: './images/2.jpg', answer: [1, 0]},
+        {src: './images/16.jpg', answer: [9, 1]},
+        {src: './images/21.jpg', answer: [6, 3]},
+        {src: './images/32.jpg', answer: [3, 5]},
+        {src: './images/77.jpg', answer: [2, 7]},
+        {src: './images/83.jpg', answer: [7, 2]},
+        {src: './images/103.jpg', answer: [4, 1]},
+        {src: './images/129.jpg', answer: [5, 2]},
+        {src: './images/148.jpg', answer: [0, 0]},
+        {src: './images/179.jpg', answer: [8, 2]},
     ]
 
     // rests the usedImages array when the length of usedImages array is equal to greenImages's length
