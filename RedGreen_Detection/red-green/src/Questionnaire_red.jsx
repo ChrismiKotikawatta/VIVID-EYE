@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-function Questionnaire() {
+function Questionnaire_red() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [isCorrect, setIsCorrect] = useState(null);
@@ -9,34 +9,25 @@ function Questionnaire() {
   const [score, setScore] = useState(0);
 
   const images = [
-    { src: './images/1.jpg', numbers: [2, 1] },
-    { src: './images/3.jpg', numbers: [0, 4] },
-    { src: './images/4.jpg', numbers: [4, 6] },
-    { src: './images/7.jpg', numbers: [9, 2] },
-    { src: './images/8.jpg', numbers: [5, 4] },
-    { src: './images/9.jpg', numbers: [9, 6] },
-    { src: './images/10.jpg', numbers: [0, 2] },
-    { src: './images/11.jpg', numbers: [6, 4] },
-    { src: './images/15.jpg', numbers: [5, 6] },
-    { src: './images/21.jpg', numbers: [6, 2] },
-    { src: './images/27.jpg', numbers: [4, 4] },
-    { src: './images/31.jpg', numbers: [1, 6] },
-    { src: './images/35.jpg', numbers: [2, 2] },
-    { src: './images/36.jpg', numbers: [7, 4] },
-    { src: './images/41.jpg', numbers: [2, 6] },
-    { src: './images/46.jpg', numbers: [1, 2] },
-    { src: './images/61.jpg', numbers: [8, 4] },
-    { src: './images/84.jpg', numbers: [8, 6] },
-    { src: './images/87.jpg', numbers: [3, 2] },
-    { src: './images/90.jpg', numbers: [3, 4] },
+    { src: './images/9.jpg', numbers: [9, 7] },
+    { src: './images/10.jpg', numbers: [0, 0] },
+    { src: './images/15.jpg', numbers: [5, 3] },
+    { src: './images/21.jpg', numbers: [6, 5] },
+    { src: './images/27.jpg', numbers: [4, 9] },
+    { src: './images/36.jpg', numbers: [7, 5] },
+    { src: './images/41.jpg', numbers: [2, 7] },
+    { src: './images/46.jpg', numbers: [1, 1] },
+    { src: './images/61.jpg', numbers: [8, 3] },
+    { src: './images/87.jpg', numbers: [3, 5] },
   ];
 
   useEffect(() => {
     if (usedImages.length === images.length) {
-      // Resetting used images when all images have been used
+      // Reset the used images
       setUsedImages([]);
     }
   }, [currentQuestionIndex, usedImages, images.length]);
+
 
   const getRandomImage = () => {
     const remainingImages = images.filter(image => !usedImages.includes(image));
@@ -46,20 +37,26 @@ function Questionnaire() {
   const handleAnswerSubmission = () => {
     const correctNumbers = currentImage.numbers;
     const userEnteredNumber = parseInt(userAnswer);
-
+  
     if (correctNumbers.includes(userEnteredNumber)) {
       setIsCorrect(true);
-      setScore(score + 10);
+      if (userEnteredNumber === correctNumbers[1]) {
+        setScore(score + 5); // Adding 5 when the user enters an answer with the defficiency
+      }
+      if (userEnteredNumber === correctNumbers[0]) {
+        setScore(score + 10); // Adding 10 when the user enters an answer with the defficiency
+      }
     } else {
       setIsCorrect(false);
     }
   };
+  
 
   const nextQuestion = () => {
     setCurrentQuestionIndex(currentQuestionIndex + 1);
     setUserAnswer('');
     setIsCorrect(null);
-    const currentImage = getRandomImage(); // Accesing the new image here
+    const currentImage = getRandomImage(); // Getting the new image
     setUsedImages([...usedImages, currentImage]);
   };
 
@@ -101,11 +98,15 @@ function Questionnaire() {
         </div>
     </div>      
       ) : (
-        <p>Congratulations! You have completed the questionnaire.</p>
+        <div>
+          <p>Congratulations! You have completed the questionnaire.</p>
+          <p>Score: {score}</p>
+          <button>View Result</button>
+        </div>
       )}
     </div>
     </div>
   );
 }
 
-export default App;
+export default Questionnaire_red;
