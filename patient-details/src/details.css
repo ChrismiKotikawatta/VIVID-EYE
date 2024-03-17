@@ -180,8 +180,9 @@ body {
   font-size: larger;
   color: rgb(0, 0, 0);
   border-radius: 20px;
-  border-style:groove;
-  border-color: #a7a7a777;
+  border: none;
+  /* border-style:groove; *
+  /* border-color: #a7a7a777; */
 
 }
 .input:hover{
