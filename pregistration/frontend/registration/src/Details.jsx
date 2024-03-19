@@ -41,13 +41,26 @@ function Details() {
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: [event.target.value] });
   };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    axios
-      .post("http://localhost:8081/patients", values)
-      .then((res) => console.log("Registration successful."))
-      .catch((err) => console.log(err));
-  };
+  
+    // Registration message
+    const[registrationMessage, setRegistrationMessage] = useState("");
+    //
+  
+    //update handle submit
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      axios
+        .post("http://localhost:8081/patients", values)
+        .then((res) => {
+          setRegistrationMessage("Registration successful.");
+          console.log("Registration successful.");
+        })
+        .catch((err) => {
+          setRegistrationMessage("Registration failed. Please try again.");
+          console.log(err);
+        });
+    };
+    //
   return (
     <div className="detailsContainer">
       <div className="animation">
@@ -173,6 +186,10 @@ function Details() {
             <input type="submit" value="Register" />
           </div>
         </form>
+        {registrationMessage && <p>{registrationMessage}</p>}
+        <div className="registerButton">
+            <input type="button" value="Start Test" />
+        </div>
       </div>
     </div>
   );
