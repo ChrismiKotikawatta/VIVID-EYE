@@ -3,6 +3,265 @@
   font-family: "Signika Negative", sans-serif;
   font-weight: 700;
   font-style: normal;
+  
+
+}
+:root{
+  --bg-color: rgb(52, 54, 54);
+  --snd-bg-color: #7BAEC1;
+  --text-color:#ABDCE3;
+}
+
+
+.heading {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  /* Center vertically */
+}
+
+.form-title {
+  margin-right: auto;
+  /* Push to left */
+  margin-left: 0px;
+  font-size: 20px;
+  color: var(--bg-color);
+}
+
+.img1 {
+  margin-left: auto;
+  /* Push to right */
+  width: 1cm;
+  height: 1cm;
+  
+}
+
+.form h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+
+.form-container {
+  width: 1400px;
+  height: 250px;
+  background: #ffffff;
+  /* opacity: 0.8; */
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-sizing: border-box;
+  position: relative;
+  /* position:absolute; */
+  overflow-x: hidden;
+
+  
+}
+
+/* .lock-icon {
+  font-size: 20px;
+  color: #0e2954;
+} */
+
+.form {
+  /* width: 12cm; */
+  height: 60%;
+  padding: 20px;
+  /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif; */
+  color: #000000;
+  /* margin-right: 10cm; */
+
+}
+
+.login-card,
+.password-card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* padding-top: 25px; */
+  gap: 20px;
+  align-items: flex-end;
+  position: absolute;
+  width: calc(100% - 30px);
+  transition: all 0.3s ease-in-out;
+  bottom: 20px;
+}
+
+.login-card {
+  left: 15px;
+  /* margin-bottom: 100px; */
+}
+
+.password-card {
+  left: 100%;
+}
+
+.field-container {
+  /* border: 1px solid #a7a7a7; */
+  background-color: #acdbe35b;
+  border-radius: 20px;
+  width: 100%;
+  height: 45px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  /* outline: none; */
+  background: transparent;
+  position: relative;
+  z-index: 11;
+  font-size: larger;
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  border: none;
+  /* border-style:groove; *
+  /* border-color: #a7a7a777; */
+
+}
+.input:hover{
+  background-color: #a7a7a749;
+ 
+  border-color: #DFE0E0;
+
+
+}
+.placeholder {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #a7a7a7;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  opacity: 1;
+}
+/* 
+.placeholder:hover{
+  color: #DFE0E0;
+} */
+
+ .input:focus~.placeholder,
+.input:not(:placeholder-shown)~.placeholder {
+  /* top: 5px; */
+  transform: none;
+  display: none;
+  /* font-size: 12px; */
+}
+ .input:focus,
+.input:not(:placeholder-shown) {
+  /* height: 68%; */
+  font-weight: bolder;
+} 
+
+.btn {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(52, 54, 54);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+
+}
+
+.btn:active {
+  scale: 0.92;
+}
+
+.btn:hover {
+  background: rgb(107, 108, 108);
+  background: linear-gradient(270deg, rgb(233, 236, 235) 0%);
+  color: rgb(4, 4, 38);
+}
+
+.btn-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card {
+  width: auto;
+  height: auto;
+  padding: 20px;
+  background: rgba(150, 150, 159, 0.295);
+  opacity: 0.9;
+  border-radius: 20px;
+  /* box-shadow: rgb(40, 182, 198) 0px -5px 5px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -8px 6px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -16px 8px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 1px 1px,
+    rgba(0, 0, 0, 0.09) 0px 2px 2px,
+    rgba(0, 0, 0, 0.09) 0px 4px 4px,
+    rgba(0, 0, 0, 0.09) 0px 8px 8px,
+    rgba(0, 0, 0, 0.09) 0px 16px 16px; */
+}
+
+
+
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+
+.table tr:hover {
+  background-color: #dddddd3f;
+}
+
+
+.table td:last-child {
+  width: 20%;
+  word-break: break-all;
+}
+
+.table td:nth-child(4) {
+  width: 20%;
+  word-break: break-all;
+}
+
+.messege {
+  
+  font-size: larger;
+  font-weight: 20px;
+  text-align: center;
+}
+* {
+  /* top: 0; */
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 
 }
 

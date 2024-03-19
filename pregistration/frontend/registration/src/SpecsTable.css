@@ -1,0 +1,36 @@
+.table{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    /* align-items: center; */
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: #acdbe35b;
+    border-radius: 20px;
+    height: fit-content;
+    width: fit-content;
+    /* border-style: double; */
+    /* border-color: aliceblue; */
+}
+
+.table  input{
+    color: rgb(0, 0, 0);
+    background-color:  rgba(148, 156, 156, 0.64);
+    border: none;
+    border-radius: 10px;
+}
+.tableHeading{
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    /* text-align: center; */
+}
+.paragraph{
+    font-size: 10px;
+    margin-top: -10px;
+    /* padding: 20px; */
+    color: rgb(75, 78, 78) ;
+    /* text-align: center; */
+}
