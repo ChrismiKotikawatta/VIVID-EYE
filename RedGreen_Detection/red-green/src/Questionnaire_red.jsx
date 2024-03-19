@@ -108,7 +108,7 @@ function Questionnaire_red() {
         ) : (
           <div className="results">
             <p>
-              <span>Congratulations! </span>You have completed the
+              <span>Congratulations! </span> You have completed the
               test.
             </p>
             <div className="animation">
