@@ -10,11 +10,11 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: "root",
     password: '',
-    database: 'patients'
+    database: 'vivid_eye'
 })
 
-app.post('/patients', (req, res) => {
-    const sql = "INSERT INTO patients (`Name`, `NIC`, `ContactNumber`, `DateOfBirth`, `Address`, `Right_eye`, `Left_eye`) VALUES (?)";
+app.post('/details', (req, res) => {
+    const sql = "INSERT INTO details (`Name`, `NIC`, `ContactNumber`, `DateOfBirth`, `Address`, `Right_eye`, `Left_eye`) VALUES (?)";
     const values = [
         req.body.Name,
         req.body.NIC,

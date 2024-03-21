@@ -50,7 +50,7 @@ function Details() {
     const handleSubmit = (event) => {
       event.preventDefault();
       axios
-        .post("http://localhost:8081/patients", values)
+        .post("http://localhost:8081/details", values)
         .then((res) => {
           setRegistrationMessage("Registration successful.");
           console.log("Registration successful.");
