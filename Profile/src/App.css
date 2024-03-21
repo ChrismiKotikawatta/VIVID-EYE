@@ -1,24 +1,34 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-@keyframes logo-spin {
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -27,16 +37,72 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/*.d_flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  p{
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
   }
 }
-
-.card {
-  padding: 2em;
+*/
+/*body {
+  background-image: url('/PB-Website_Your-Childs-Sight_Header-01.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+*/
+.search-bar {
+  margin-bottom: 20px; /* Add margin bottom to create space between search bar and table */
+  
 }
 
-.read-the-docs {
-  color: #888;
+.search-bar input {
+  width: 97%; /* Make the input field fill its container */
+  padding: 8px; /* Add padding for better appearance */
+  font-size: 16px; /* Adjust font size */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
 }
+
+.table-container {
+  margin-top: 20px; /* Add margin top to create space between search bar and table */
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.table {
+  border-collapse: collapse; /* Ensure table borders collapse properly */
+  width: 100%;
+}
+
+.table th,
+.table td {
+  border: 1px solid #000; /* Add border to table cells */
+  padding: 8px; /* Add padding to table cells */
+}
+
+.thead-dark th {
+  background-color: #343a40; /* Set background color for table header */
+  color: white; /* Set text color for table header */
+}
+
+.d_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.d_flex p {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
