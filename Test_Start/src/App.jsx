@@ -1,6 +1,6 @@
 // App.jsx
 import React from 'react';
-import TestStart from './testStart';
+import TestStart from './components/testStart';
 
 function App() {
   const userName = "John"; // You can replace this with dynamic data
