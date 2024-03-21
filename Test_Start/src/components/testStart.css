@@ -3,6 +3,11 @@ body {
   background-image: url("../assets/pic.png");
   background-size: cover; /* Adjust as needed */
   background-position: center; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure the body covers the entire viewport height */
+
 }
 
 .test-start-container {
