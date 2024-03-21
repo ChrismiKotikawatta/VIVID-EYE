@@ -1,0 +1,19 @@
+/* testStart.css */
+.test-start-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.start-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #0056b3;
+}
