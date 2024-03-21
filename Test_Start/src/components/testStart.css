@@ -1,4 +1,10 @@
 /* testStart.css */
+body {
+  background-image: url('./pic.png');
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+}
+
 .test-start-container {
   text-align: center;
   margin-top: 50px;
