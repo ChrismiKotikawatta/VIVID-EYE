@@ -1,6 +1,5 @@
 .container {
-  background-image: url("./assets/pic.png"); /* Replace 'your-background-image-url.jpg' with the URL or path to your background image */
-  background-size: cover;
+  background-image: url("pic.png"); 
   background-position: center;
   min-height: 100vh;
   display: flex;
