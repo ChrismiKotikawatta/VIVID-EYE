@@ -1,23 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, BrowserRouter } from 'react-router-dom';
-import Data from './Data'; // Adjust the import path here
-import PatientProfile from './PatientProfile'; // Assuming PatientProfile.jsx is inside a components folder
+import PatientProfile from './components/PatientProfile';
 
-const App = () => {
-  return (
-    <Router>
-      <div>
-        <BrowserRouter>
-        <Route>
-          <Route path="/" exact element={Data} />
-          <Route path="/profile/:id"elementt={PatientProfile} />
-          
-        </Route>
-        </BrowserRouter>
-      </div>
-    </Router>
-  );
+const patientData = {
+  name: 'John Doe',
+  // Add other patient details here
 };
 
-export default App;
+function App() {
+  return (
+    <div className="App">
+      <PatientProfile patient={patientData} />
+    </div>
+  );
+}
 
+export default App;

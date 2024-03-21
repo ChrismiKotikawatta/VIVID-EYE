@@ -1,0 +1,50 @@
+body {
+  background-image: url("../pic.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Set the height of the body to 100% of the viewport height */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+.PatientProfile {
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.PatientProfile h2 {
+  margin-bottom: 20px;
+}
+
+.PatientProfile form {
+  display: flex;
+  flex-direction: column;
+}
+
+.PatientProfile label {
+  margin-bottom: 10px;
+}
+
+.PatientProfile input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.PatientProfile button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.PatientProfile button:hover {
+  background-color: #0056b3;
+}
