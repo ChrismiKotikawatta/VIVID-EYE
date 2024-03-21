@@ -1,6 +1,6 @@
 /* testStart.css */
 body {
-  background-image: url('./pic.png');
+  background-image: url("../assets/pic.png");
   background-size: cover; /* Adjust as needed */
   background-position: center; /* Adjust as needed */
 }
