@@ -30,6 +30,8 @@ body {
 /* Search bar styles */
 .search-bar {
   margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 40px;
 }
 
 .form-control {
@@ -65,4 +67,8 @@ body {
 
 .table tbody tr:hover {
   background-color: #f0f0f0; /* Hover effect */
+}
+
+.table td{
+  color: #333;
 }

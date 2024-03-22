@@ -37,7 +37,7 @@ const Data = () => {
   return (
     <div className='row'> 
      <div className='d_flex my-4 text-uppercase'>
-      <p>Patient Detail List </p>
+      <h1>Patient Detail List </h1>
      </div>
      <div className='search-bar my-4 '>
      <input 
