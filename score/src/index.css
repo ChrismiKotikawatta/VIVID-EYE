@@ -28,8 +28,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-image:url(./assets/bg3.png);
-  background-size: 25%;
 }
 
 h1 {
