@@ -16,14 +16,6 @@ app.get('/',(re,res)=> {
     return res.json('from backend side');
 })
 
-// app.get('/details',(req,res)=> {
-//     const sql= "SELECT * FROM details";
-//     db.query(sql,(err,data)=> {
-//         if(err) return res.json(err);
-//         return res.json(data);
-//     })
-
-// })
 
 app.get('/details', (req, res) => {
     const sql = "SELECT * FROM details";
@@ -36,6 +28,9 @@ app.get('/details', (req, res) => {
         return res.json(data);
     });
 });
+
+
+
 
 app.listen(8081,()=>{
     console.log("listening");
