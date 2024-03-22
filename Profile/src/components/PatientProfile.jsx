@@ -31,72 +31,81 @@ const PatientProfile = () => {
       });
   }, []);
 
-  const [editedPatient, setEditedPatient] = useState({ ...patient });
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setEditedPatient({ ...editedPatient, [name]: value });
+    setPatient({ ...patient, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can implement the logic to submit the edited patient details
-    setIsEditing(false);
-    // Example: Call an API to save the edited patient details
+
+    // Assuming you have an API endpoint to update patient details
+    fetch("http://127.0.0.1/VividEye/api/updatePatient.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(patient), // Send the patient data
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to update patient details.");
+        }
+        // Here you can handle successful response, such as displaying a success message
+        console.log("Patient details updated successfully.");
+        setIsEditing(false); // Close the editing mode after successful update
+      })
+      .catch((error) => {
+        // Here you can handle errors, such as displaying an error message
+        console.error("Error updating patient details:", error);
+      });
   };
 
   return (
     <div className="PatientProfile">
       <h2>Patient Profile</h2>
-      {isEditing ? (
-        <form onSubmit={handleSubmit}>
-          <label>ID:</label>
-          <input
-            type="text"
-            name="ID"
-            value={editedPatient.ID}
-            onChange={handleInputChange}
-          />
-          <label>Name:</label>
-          <input
-            type="text"
-            name="Name"
-            value={editedPatient.Name}
-            onChange={handleInputChange}
-          />
-          <label>Email:</label>
-          <input
-            type="email"
-            name="Email"
-            value={editedPatient.Email}
-            onChange={handleInputChange}
-          />
-          <label>Contact Number:</label>
-          <input
-            type="text"
-            name="Contact_number"
-            value={editedPatient.Contact_number}
-            onChange={handleInputChange}
-          />
-          <label>NIC:</label>
-          <input
-            type="text"
-            name="NIC_number"
-            value={editedPatient.NIC_number}
-            onChange={handleInputChange}
-          />
-          <button type="submit">Save</button>
-        </form>
-      ) : (
-        <div>
-          <p>ID: {patient.ID}</p>
-          <p>Name: {patient.Name}</p>
-          <p>Email: {patient.Email}</p>
-          <p>Contact Number: {patient.Contact_number}</p>
-          <p>NIC: {patient.NIC_number}</p>
+      <div>
+        <p>ID: {patient.ID}</p>
+        <p>Name: {patient.Name}</p>
+        <p>Email: {patient.Email}</p>
+        <p>Contact Number: {patient.Contact_number}</p>
+        <p>NIC: {patient.NIC_number}</p>
+        {isEditing ? (
+          <form onSubmit={handleSubmit}>
+            <label>Name:</label>
+            <input
+              type="text"
+              name="Name"
+              value={patient.Name}
+              onChange={handleInputChange}
+            />
+            <label>Email:</label>
+            <input
+              type="email"
+              name="Email"
+              value={patient.Email}
+              onChange={handleInputChange}
+            />
+            <label>Contact Number:</label>
+            <input
+              type="text"
+              name="Contact_number"
+              value={patient.Contact_number}
+              onChange={handleInputChange}
+            />
+            <label>NIC:</label>
+            <input
+              type="text"
+              name="NIC_number"
+              value={patient.NIC_number}
+              onChange={handleInputChange}
+            />
+            <button type="submit">Save</button>
+          </form>
+        ) : (
           <button onClick={() => setIsEditing(true)}>Edit</button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
