@@ -40,7 +40,7 @@ const PatientProfile = () => {
     e.preventDefault();
 
     // Assuming you have an API endpoint to update patient details
-    fetch("http://127.0.0.1/VividEye/api/updatePatient.php", {
+    fetch("http://localhost/VividEye/dbcon.php/updatePatient.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
