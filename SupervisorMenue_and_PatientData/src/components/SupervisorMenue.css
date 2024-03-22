@@ -2,58 +2,15 @@
 
 /* Set background image */
 body {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  
   background-image: url("../assets/pic.png"); /* Replace 'pic.png' with the correct path to your image */
-  background-size: cover;
-  background-position: center;
-  height: 100vh; /* Ensure full viewport height */
-}
-
-/* Center content */
-.container {
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh; 
+  
 }
 
-/* Card styling */
-.card {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 80%; /* Adjust card width as needed */
-  max-width: 400px; /* Adjust maximum card width as needed */
-}
 
-/* Card title styling */
-.card-title {
-  color: #333;
-}
-
-/* Button styling */
-.custom-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 15px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 10px; /* Add margin bottom to create space between buttons */
-}
-
-.custom-button:last-child {
-  margin-bottom: 0; /* Remove margin bottom from last button to prevent extra space */
-}
-
-.custom-button:hover {
-  background-color: #0056b3;
-}
-
-/* Adjust spacing */
-.card-body {
-  padding: 30px;
-}

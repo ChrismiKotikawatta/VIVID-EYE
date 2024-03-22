@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react';
-import '../App.css'; // Importing CSS file
+import './data.css'; // Importing CSS file
 
 const Data = () => {
   const [item, setItem] = useState([]);

@@ -1,0 +1,11 @@
+body {
+  
+  background-image: url("../assets/pic.png"); /* Replace 'pic.png' with the correct path to your image */
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  
+}
