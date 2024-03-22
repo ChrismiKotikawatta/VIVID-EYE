@@ -1,0 +1,52 @@
+/* SupervisorMenu.css */
+
+/* Set background image */
+body {
+  
+  background-image: url("../assets/pic.png"); /* Replace 'pic.png' with the correct path to your image */
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  
+}
+
+.container {
+  margin-top: 50px; /* Adjust margin as needed */
+}
+
+.card {
+  
+  border: 1px solid #ccc; /* Add border for card */
+  border-radius: 10px; /* Add border radius for card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for card */
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.card-title {
+  color: #333;
+}
+
+.btn {
+  background-color: #007bff; /* Blue button color */
+  color: #fff; /* Text color */
+  border-radius: 5px; /* Add border radius */
+  transition: all 0.3s ease; /* Smooth transition */
+  margin-bottom: 10px; /* Add margin bottom to separate buttons */
+  margin-left: 10px;
+  padding: 10px 20px; /* Add padding for better button appearance */
+}
+
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.custom-button {
+  margin-bottom: 20px; /* Add margin between buttons */
+}

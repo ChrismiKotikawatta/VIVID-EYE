@@ -60,7 +60,7 @@ function Detail() {
 
   return (
     <div className="scroll">
-      <h1>VIVID EYE</h1>
+      {/* <h1>VIVID EYE</h1>/ */}
 
       <div className="form-container">
         <form className="form">
