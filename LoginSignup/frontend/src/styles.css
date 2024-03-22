@@ -1,0 +1,154 @@
+* {
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.main-container {
+ 
+  display: flex;
+  height: 600px;
+  /* border: 1px solid rgb(255, 255, 255); */
+  background-color: rgb(255, 255, 255);
+  color: rgb(52, 54, 54);
+  padding: 5px;
+  width: 30cm;
+  margin-top: 50px; /* Center the form horizontally */
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; /* Center the content inside the form */
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(./images/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.signpic {
+  display: flex;
+  height: 600px;
+  border: none;
+  /* border: 1px solid rgb(255, 255, 255); */
+  background-color: white;
+  color: rgb(52, 54, 54);
+  padding: 5px;
+  width: 30cm;
+  margin-top: 50px; /* Center the form horizontally */
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; /* Center the content inside the form */
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-sizing: border-box;
+}
+
+.animation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #acdbe35b;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.card {
+  display: 1;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  padding: 70px;
+  
+}
+
+.signup-btn{
+    font-size: 1rem;
+    padding:auto;
+    border: none;
+    outline: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(52, 54, 54);
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    transition: 0.6s;
+    width: 200px;
+    height: 40px;
+    /* margin-right: auto; */
+    margin-left: 90px;
+}
+
+.signup-btn:hover{
+    background: rgb(107, 108, 108);
+    background: linear-gradient(270deg, rgb(233, 236, 235) 0%);
+    color: white;
+}
+
+.inputs input{
+    width: 390px;
+    height: 40px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #acdbe35b;
+    border: none;
+    font-size: 14px;
+    color: rgb(143, 143, 143);
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* margin-left: 30px; */
+}
+
+.inputs label{
+    width: 150px; /* Adjust the width of labels as needed */
+    text-align: left;
+    font-size: 14px;
+    color:  rgb(52, 54, 54);
+    display: inline-block;
+
+   
+  
+}
+
+.login-link{
+    font-size: 13px;
+    margin-left: 110px;
+}
+.login-link a{
+    margin: 5px;
+    cursor: pointer;
+    color:  rgb(52, 54, 54);
+    text-decoration: underline;
+}
+
+.login-link a:hover{
+    cursor: pointer;
+    color: #acdbe35b;
+    font-weight: bolder;
+}
+
+.signup-link{
+    font-size: 13px;
+    margin-left: 60px;
+}
+
+.signup-link a{
+    margin: 5px;
+    cursor: pointer;
+    color:  rgb(52, 54, 54);
+    text-decoration: underline;
+}
+
+.signup-link a:hover{
+    cursor: pointer;
+    color: #acdbe35b;
+    font-weight: bolder;
+}
