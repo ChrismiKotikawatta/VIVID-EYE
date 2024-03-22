@@ -1,10 +1,37 @@
-import React, { useState } from 'react';
-import './PatientProfile.css';
-import patientImg from '../patient.jpg'; // Adjust the path as needed
+import React, { useState, useEffect } from "react";
+import "./PatientProfile.css";
 
-const PatientProfile = ({ patient }) => {
+const PatientProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const [editedPatient, setEditedPatient] = useState(patient);
+  const [patient, setPatient] = useState({
+    ID: "",
+    Name: "",
+    Email: "",
+    Contact_number: "",
+    NIC_number: "",
+  });
+
+  useEffect(() => {
+    // Fetch data for a specific user ID (for example, user ID 1)
+    const userID = 1; // Change this to the desired user ID
+    fetch(`http://127.0.0.1/VividEye/api/api.php?userID=${userID}`)
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.length > 0) {
+          console.log("API Response:", result[0]); // Log the response for debugging
+          setPatient(result[0]);
+        } else {
+          console.error(
+            "API response is empty or does not contain expected data."
+          );
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching patient data:", error);
+      });
+  }, []);
+
+  const [editedPatient, setEditedPatient] = useState({ ...patient });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,59 +50,50 @@ const PatientProfile = ({ patient }) => {
       <h2>Patient Profile</h2>
       {isEditing ? (
         <form onSubmit={handleSubmit}>
+          <label>ID:</label>
+          <input
+            type="text"
+            name="ID"
+            value={editedPatient.ID}
+            onChange={handleInputChange}
+          />
           <label>Name:</label>
           <input
             type="text"
-            name="name"
-            value={editedPatient.name}
-            onChange={handleInputChange}
-          />
-          <label>Age:</label>
-          <input
-            type="number"
-            name="age"
-            value={editedPatient.age}
-            onChange={handleInputChange}
-          />
-          <label>Color Blindness Type:</label>
-          <input
-            type="text"
-            name="colorBlindnessType"
-            value={editedPatient.colorBlindnessType}
-            onChange={handleInputChange}
-          />
-          <label>Color Blindness Severity:</label>
-          <input
-            type="text"
-            name="colorBlindnessSeverity"
-            value={editedPatient.colorBlindnessSeverity}
-            onChange={handleInputChange}
-          />
-          <label>Mobile Number:</label>
-          <input
-            type="text"
-            name="mobileNumber"
-            value={editedPatient.mobileNumber}
+            name="Name"
+            value={editedPatient.Name}
             onChange={handleInputChange}
           />
           <label>Email:</label>
           <input
             type="email"
-            name="email"
-            value={editedPatient.email}
+            name="Email"
+            value={editedPatient.Email}
+            onChange={handleInputChange}
+          />
+          <label>Contact Number:</label>
+          <input
+            type="text"
+            name="Contact_number"
+            value={editedPatient.Contact_number}
+            onChange={handleInputChange}
+          />
+          <label>NIC:</label>
+          <input
+            type="text"
+            name="NIC_number"
+            value={editedPatient.NIC_number}
             onChange={handleInputChange}
           />
           <button type="submit">Save</button>
         </form>
       ) : (
         <div>
-          <img src={patientImg} alt="Profile" />
-          <p>Name: {patient.name}</p>
-          <p>Age: {patient.age}</p>
-          <p>Color Blindness Type: {patient.colorBlindnessType}</p>
-          <p>Color Blindness Severity: {patient.colorBlindnessSeverity}</p>
-          <p>Mobile Number: {patient.mobileNumber}</p>
-          <p>Email: {patient.email}</p>
+          <p>ID: {patient.ID}</p>
+          <p>Name: {patient.Name}</p>
+          <p>Email: {patient.Email}</p>
+          <p>Contact Number: {patient.Contact_number}</p>
+          <p>NIC: {patient.NIC_number}</p>
           <button onClick={() => setIsEditing(true)}>Edit</button>
         </div>
       )}
