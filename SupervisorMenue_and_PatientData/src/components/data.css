@@ -1,0 +1,74 @@
+body {
+  
+  background-image: url("../assets/pic.png"); /* Replace 'pic.png' with the correct path to your image */
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  
+}
+
+.row {
+  margin: 20px;
+}
+
+/* Title styles */
+.d_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.d_flex p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Search bar styles */
+.search-bar {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 40px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  background-color: #fff;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f2f2f2; /* Light gray background for header */
+  font-weight: bold;
+  color: #333;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row background color */
+}
+
+.table tbody tr:hover {
+  background-color: #f0f0f0; /* Hover effect */
+}
+
+.table td{
+  color: #333;
+}
