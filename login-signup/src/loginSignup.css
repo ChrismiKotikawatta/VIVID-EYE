@@ -1,0 +1,159 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  /* padding: 2rem; */
+  /* text-align: center; */
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  background-image: url(./assets/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  height: 650px;
+  /* border: 1px solid rgb(255, 255, 255); */
+  background-color: rgb(255, 255, 255);
+  color: rgb(52, 54, 54);
+  /* padding: 5px; */
+  width: 30cm;
+  margin-top: 5px; /* Center the form horizontally */
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; /* Center the content inside the form */
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-sizing: border-box;
+}
+
+.login-form {
+  display: 1;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  padding: 10px 50px 50px 60px;
+  /* overflow: scroll; */
+}
+
+.login-btn {
+  font-size: 1rem;
+  padding: auto;
+  border: none;
+  outline: none;
+  border-radius: 5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(52, 54, 54);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  width: 200px;
+  height: 40px;
+  /* margin-right: auto; */
+  margin-left: 90px;
+}
+
+.login-btn:hover {
+  background: rgb(107, 108, 108);
+  background: linear-gradient(270deg, rgb(233, 236, 235) 0%);
+  color: white;
+}
+
+.form input {
+  width: 390px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #acdbe35b;
+  border: none;
+  font-size: 14px;
+  color: rgb(143, 143, 143);
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.form input label {
+  width: 150px; /* Adjust the width of labels as needed */
+  text-align: left;
+  font-size: 14px;
+  color: rgb(52, 54, 54);
+  display: inline-block;
+}
+
+.form input[type="checkbox"] {
+  /* position: relative;
+  /* padding-left: 25px; */
+  /* cursor: pointer; */
+  height: 15px;
+  width: 15px;
+}
+
+.rememberMe {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  align-items: center;
+}
+.rememberMe label {
+  font-size: 12px;
+}
+.rememberMe Link {
+  color: darkblue;
+}
+
+.checkbox {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.animation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #acdbe35b;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.icons {
+  padding-right: 10px;
+  padding-top: 5px;
+  height: 20px;
+}
+
+/* App.css */
+.error {
+  display: block;
+  color: rgb(229, 109, 109);
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: bold;
+}
