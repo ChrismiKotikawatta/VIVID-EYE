@@ -1,31 +1,22 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import "./loginSignup.css";
 import { AiOutlineUnlock } from "react-icons/ai";
 import { BiUser } from "react-icons/bi";
 import Lottie from "lottie-react";
 import animationLogin from "./assets/Animation - 1710871653759.json";
+import axios from "axios"; // Import axios for making HTTP requests
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-    confirmpassword:"",
+    Username: "",
+    Password: "",
     rememberMe: false,
   });
 
   const [errors, setErrors] = useState({});
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const validationErrors = validateForm(formData);
-    if (Object.keys(validationErrors).length === 0) {
-      // Proceed with form submission
-      console.log("Login form submitted");
-    } else {
-      setErrors(validationErrors);
-    }
-  };
+  const [signupMessage, setSignupMessage] = useState(""); // State variable for signup message
+  const [submitting, setSubmitting] = useState(false); // State variable to track form submission
 
   const handleChange = (event) => {
     const { name, value, checked, type } = event.target;
@@ -36,16 +27,32 @@ const Signup = () => {
     }));
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setSubmitting(true); // Set submitting state to true during form submission
+    const validationErrors = validateForm(formData);
+    if (Object.keys(validationErrors).length === 0) {
+      try {
+        const response = await axios.post("http://localhost:8081/admin?action=signup", formData);
+        setSignupMessage(response.data.message); // Set signup message from server response
+        console.log("Signup Successful.");
+      } catch (error) {
+        setSignupMessage("Signup failed. Please try again."); // Set signup message for error cases
+        console.error("Signup failed. Please try again.", error.response?.data);
+      }
+    } else {
+      setErrors(validationErrors);
+    }
+    setSubmitting(false); // Set submitting state back to false after form submission
+  };
+
   const validateForm = (data) => {
     let errors = {};
-    if (!data.username.trim()) {
+    if (!data.Username.trim()) {
       errors.username = "*Username is required";
     }
-    if (!data.password.trim()) {
+    if (!data.Password.trim()) {
       errors.password = "*Password is required";
-    }
-    if(!data.confirmpassword.trim()){
-      errors.confirmpassword ="*Confirm your password"
     }
     if (!data.rememberMe) {
       errors.rememberMe = "*You must agree to the terms";
@@ -63,54 +70,59 @@ const Signup = () => {
         <form className="form" onSubmit={handleSubmit}>
           <div>
             <BiUser className="icons" />
-            <label htmlFor="username">Username</label>
-            <br></br>
-            <input type="text" id="username" name = "username"placeholder="Enter Username"
-            value={formData.username}
-            onChange={handleChange} />
+            <label htmlFor="Username">Username</label>
+            <br />
+            <input
+              type="text"
+              id="Username"
+              name="Username"
+              placeholder="Enter Username"
+              value={formData.Username}
+              onChange={handleChange}
+            />
             {errors.username && <span className="error">{errors.username}</span>}
           </div>
           <div>
             <AiOutlineUnlock className="icons" />
-            <label htmlFor="password">Password</label>
-            <br></br>
-            <input type="password" 
-            id="password"
-            name="password"
-            placeholder="Enter Password"
-            value={formData.password} 
-            onChange={handleChange}/>
+            <label htmlFor="Password">Password</label>
+            <br />
+            <input
+              type="password"
+              id="Password"
+              name="Password"
+              placeholder="Enter Password"
+              value={formData.Password}
+              onChange={handleChange}
+            />
             {errors.password && <span className="error">{errors.password}</span>}
           </div>
-          <div>
-            <AiOutlineUnlock className="icons" />
-            <label htmlFor="confirmpassword">Confirm Password</label>
-            <br></br>
-            <input type="password" id="confirmpassword" 
-            name="confirmpassword"
-            
-            placeholder="Confirm Password"
-            value={formData.confirmpassword}
-            onChange={handleChange} />
-            {errors.confirmpassword && <span className="error">{errors.confirmpassword}</span>}
-          </div>
+
           <div className="rememberMe">
             <div className="checkbox">
-              <input type="checkbox" name="rememberMe" id="rememberMe" checked={formData.rememberMe}
-                onChange={handleChange}/>
+              <input
+                type="checkbox"
+                name="rememberMe"
+                id="rememberMe"
+                checked={formData.rememberMe}
+                onChange={handleChange}
+              />
               <label htmlFor="rememberMe">
                 I've read and agree with <span>Terms of Service </span>and our{" "}
                 <span>Privacy Policy</span>
               </label>
             </div>
             {errors.rememberMe && <span className="error">{errors.rememberMe}</span>}
-            <br></br>
           </div>
-          <button className="login-btn" type="submit">
+
+          {submitting && <p>Submitting...</p>}
+
+          <button className="login-btn" type="submit" disabled={submitting}>
             Sign Up
           </button>
-          <br></br>
-          <br></br>
+          <br />
+          {signupMessage && <span className="signup-message">{signupMessage}</span>}
+          <br />
+          <br />
           <div>
             <span>
               Already Have an Account? <Link to="/Login">Login</Link>
