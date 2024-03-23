@@ -9,8 +9,8 @@ import animationLogin from "./assets/Animation - 1710871653759.json";
 const Signup = () => {
   const [formData, setFormData] = useState({
     username: "",
+    email:"",
     password: "",
-    confirmpassword:"",
     rememberMe: false,
   });
 
@@ -41,12 +41,13 @@ const Signup = () => {
     if (!data.username.trim()) {
       errors.username = "*Username is required";
     }
+    if(!data.email.trim()){
+      errors.email ="*Email is required"
+    }
     if (!data.password.trim()) {
       errors.password = "*Password is required";
     }
-    if(!data.confirmpassword.trim()){
-      errors.confirmpassword ="*Confirm your password"
-    }
+    
     if (!data.rememberMe) {
       errors.rememberMe = "*You must agree to the terms";
     }
@@ -72,6 +73,18 @@ const Signup = () => {
           </div>
           <div>
             <AiOutlineUnlock className="icons" />
+            <label htmlFor="email">Email Address</label>
+            <br></br>
+            <input type="email" id="email" 
+            name="email"
+            
+            placeholder="Enter Email"
+            value={formData.email}
+            onChange={handleChange} />
+            {errors.email && <span className="error">{errors.email}</span>}
+          </div>
+          <div>
+            <AiOutlineUnlock className="icons" />
             <label htmlFor="password">Password</label>
             <br></br>
             <input type="password" 
@@ -82,18 +95,7 @@ const Signup = () => {
             onChange={handleChange}/>
             {errors.password && <span className="error">{errors.password}</span>}
           </div>
-          <div>
-            <AiOutlineUnlock className="icons" />
-            <label htmlFor="confirmpassword">Confirm Password</label>
-            <br></br>
-            <input type="password" id="confirmpassword" 
-            name="confirmpassword"
-            
-            placeholder="Confirm Password"
-            value={formData.confirmpassword}
-            onChange={handleChange} />
-            {errors.confirmpassword && <span className="error">{errors.confirmpassword}</span>}
-          </div>
+         
           <div className="rememberMe">
             <div className="checkbox">
               <input type="checkbox" name="rememberMe" id="rememberMe" checked={formData.rememberMe}
