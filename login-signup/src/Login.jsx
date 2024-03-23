@@ -5,26 +5,43 @@ import { AiOutlineUnlock } from "react-icons/ai";
 import { BiUser } from "react-icons/bi";
 import Lottie from "lottie-react";
 import animationLogin from "./assets/Animation - 1710871653759.json";
+import axios from "axios";
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    username: "",
-    password: "",
+    Username: "",
+    Password: "",
     rememberMe: false,
   });
 
   const [errors, setErrors] = useState({});
-
+  const [loginMessage, setLoginMessage] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
     const validationErrors = validateForm(formData);
     if (Object.keys(validationErrors).length === 0) {
-      // Proceed with form submission
-      console.log("Login form submitted");
+      axios
+        .post("http://localhost:8081/admin?action=login", formData)
+        .then((res) => {
+          if (res.data.success) {
+            setLoginMessage("Logged In Successfully."); // Set login message
+            console.log("Login Successful.");
+            // Redirect or perform other actions upon successful login
+          } else {
+            setLoginMessage("Incorrect username or password."); // Set login message
+            console.log("Login Failed: Incorrect username or password.");
+          }
+        })
+        .catch((err) => {
+          setLoginMessage("Login failed. Please try again."); // Set login message
+          console.error("Login failed. Please try again.", err.response?.data);
+          // Handle error response if needed
+        });
     } else {
       setErrors(validationErrors);
     }
   };
+  
 
   const handleChange = (event) => {
     const { name, value, checked, type } = event.target;
@@ -37,14 +54,17 @@ const Login = () => {
 
   const validateForm = (data) => {
     let errors = {};
-    if (!data.username.trim()) {
+    if (!data.Username.trim()) {
       errors.username = "*Username is required";
     }
-    if (!data.password.trim()) {
+    if (!data.Password.trim()) {
       errors.password = "*Password is required";
     }
     if (!data.rememberMe) {
       errors.rememberMe = "*You must agree to the terms";
+    }
+    if (data.Username.trim() && data.Password.trim() && data.Username === data.Password) {
+      errors.password = "*Password should not match username";
     }
     return errors;
   };
@@ -59,14 +79,14 @@ const Login = () => {
         <form className="form" onSubmit={handleSubmit}>
           <div>
             <BiUser className="icons" />
-            <label htmlFor="username">Username</label>
+            <label htmlFor="Username">Username</label>
             <br />
             <input
               type="text"
-              id="username"
-              name="username"
+              id="Username"
+              name="Username"
               placeholder="Enter Username"
-              value={formData.username}
+              value={formData.Username}
               onChange={handleChange}
             />
             {errors.username && (
@@ -79,10 +99,10 @@ const Login = () => {
             <br />
             <input
               type="password"
-              id="password"
-              name="password"
+              id="Password"
+              name="Password"
               placeholder="Enter Password"
-              value={formData.password}
+              value={formData.Password}
               onChange={handleChange}
             />
             {errors.password && (
@@ -113,6 +133,7 @@ const Login = () => {
           <button className="login-btn" type="submit">
             Login
           </button>
+          {loginMessage && <span className="signup-message">{loginMessage}</span>}
           <br />
           <br />
           <div>

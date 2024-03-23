@@ -35,7 +35,7 @@ body {
 
 .main {
   display: flex;
-  height: 650px;
+  height: 700px;
   /* border: 1px solid rgb(255, 255, 255); */
   background-color: rgb(255, 255, 255);
   color: rgb(52, 54, 54);
@@ -154,6 +154,15 @@ body {
   display: block;
   color: rgb(229, 109, 109);
   font-size: 12px;
-  margin-top: 4px;
+  margin: auto;
+  font-weight: bold;
+}
+
+.signup-message{
+  display: block;
+  color: rgb(229, 109, 109);
+  font-size: 16px;
+  margin: auto;
+  
   font-weight: bold;
 }
