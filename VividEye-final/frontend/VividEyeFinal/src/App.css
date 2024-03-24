@@ -1,0 +1,12 @@
+ :root {
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  /* color-scheme: light dark; */
+  color: rgba(0, 0, 0, 0.87);
+  /* background-color: #5cc2fd; */
+  background-image: url('./assets/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* overflow: hidden; */
+} 
