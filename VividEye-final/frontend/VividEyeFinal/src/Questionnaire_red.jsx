@@ -16,16 +16,16 @@ function Questionnaire_red(){
     const [resultDisplay, setResultDisplay] = useState('');
 
     const greenImages = [
-        { src: 'src/images/9.jpg', numbers: [9, 7] },
-        { src: 'src/images/10.jpg', numbers: [0, 0] },
-        { src: 'src/images/15.jpg', numbers: [5, 3] },
-        { src: 'src/images/11.jpg', numbers: [6, 5] },//
-        { src: 'src/images/27.jpg', numbers: [4, 9] },
-        { src: 'src/images/36.jpg', numbers: [7, 5] },
-        { src: 'src/images/41.jpg', numbers: [2, 7] },
-        { src: 'src/images/46.jpg', numbers: [1, 1] },
-        { src: 'src/images/61.jpg', numbers: [8, 3] },
-        { src: 'src/images/87.jpg', numbers: [3, 5] },
+        { src: 'src/assets/9.jpg', numbers: [9, 7] },
+        { src: 'src/assets/10.jpg', numbers: [0, 0] },
+        { src: 'src/assets/15.jpg', numbers: [5, 3] },
+        { src: 'src/assets/11.jpg', numbers: [6, 5] },//
+        { src: 'src/assets/27.jpg', numbers: [4, 9] },
+        { src: 'src/assets/36.jpg', numbers: [7, 5] },
+        { src: 'src/assets/41.jpg', numbers: [2, 7] },
+        { src: 'src/assets/46.jpg', numbers: [1, 1] },
+        { src: 'src/assets/61.jpg', numbers: [8, 3] },
+        { src: 'src/assets/87.jpg', numbers: [3, 5] },
     ]
 
     // rests the usedImages array when the length of usedImages array is equal to greenImages's length

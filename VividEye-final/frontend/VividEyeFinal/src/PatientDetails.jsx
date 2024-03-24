@@ -55,7 +55,7 @@ function Detail() {
         <form className="form">
           <div className='heading'>
             <h1 className="form-title">PATIENT DETAILS</h1>
-            <img className='img1' src={'src/images/medical-records.png'} alt="patient details" />
+            <img className='img1' src={'src/assets/medical-records.png'} alt="patient details" />
           </div>
 
           <h2 className="form-sub-title">
