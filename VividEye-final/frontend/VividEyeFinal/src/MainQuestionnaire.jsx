@@ -15,9 +15,9 @@ function MainQuestionnaire() {
   const [userAnswer, setUserAnswer] = useState("");
 
   const greenImages = [
-    { src: "./images/710.jpg", answer: [5] },
-    { src: "./images/557.jpg", answer: [7] },
-    { src: "./images/1267.jpg", answer: [8] },
+    { src: "src/images/710.jpg", answer: [5] },
+    { src: "src/images/557.jpg", answer: [7] },
+    { src: "src/images/1267.jpg", answer: [8] },
   ];
 
   // rests the usedImages array when the length of usedImages array is equal to greenImages's length
