@@ -201,7 +201,7 @@ function Questionnaire_green() {
         ) : (
           <div>
             <p>Congratulations! You have completed the questionnaire.</p>
-            <div className="animation">
+            <div className="animationtest">
               <Lottie animationData={animationWelldone} />
             </div>
             <p>Score: {score}</p>

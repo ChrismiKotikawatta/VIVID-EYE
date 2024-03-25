@@ -17,9 +17,9 @@
   display: flex;
   background-color: var(--main-color);
   border-radius: 20px;
-  padding: 10px;
+  padding: 0px;
   width: 30cm;
-  height: 75%;
+  height: 70%;
   margin-left: 2cm;
   margin-bottom: 2cm;
   margin-top: 50px;
@@ -163,4 +163,15 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.newanimation{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #acdbe35b;
+  border-radius: 20px;
+  padding: 20px;
+  height: 660px;
 }

@@ -131,11 +131,13 @@
     color: rgb(255, 255, 255);
   }
 
-  .animation{
-    width: 20%;
+  .animationtest{
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
+    
   }

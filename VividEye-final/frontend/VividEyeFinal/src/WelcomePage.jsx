@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 function WelcomePage() {
   const [count, setCount] = useState(0);
   const navigate = useNavigate();
+  document.title = 'VIVID-EYE';
 
   return (
     <div className="content">

@@ -127,7 +127,7 @@ function MainQuestionnaire() {
         ) : (
           <div className="next">
             <p>You have completed the Demo! Lets start the test.</p>
-            <div className="animation">
+            <div className="animationtest">
               <Lottie animationData={animationWelldone} />
             </div>
 

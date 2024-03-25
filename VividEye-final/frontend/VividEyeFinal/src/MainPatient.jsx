@@ -6,11 +6,12 @@ import { useNavigate } from "react-router-dom";
 
 function MainPatient() {
   const [count, setCount] = useState(0)
+  document.title = 'VIVID-EYE';
 
   const navigate = useNavigate();
   return (
       <div className='NewCard'>
-        <div className='animation'>
+        <div className='newanimation'>
           <Lottie animationData={NewAnimation}></Lottie>
 
         </div>

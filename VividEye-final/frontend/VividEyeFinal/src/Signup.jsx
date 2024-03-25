@@ -107,7 +107,7 @@ const Signup = () => {
                 id="rememberMe"
                 checked={formData.rememberMe}
                 onChange={handleChange}
-              />
+              /><br></br><br></br>
               <label htmlFor="rememberMe">
                 I've read and agree with <span>Terms of Service </span>and our{" "}
                 <span>Privacy Policy</span>
@@ -117,6 +117,7 @@ const Signup = () => {
           </div>
 
           {submitting && <p>Submitting...</p>}
+          <br></br>
 
           <button className="login-btn" type="submit" disabled={submitting}>
             Sign Up
